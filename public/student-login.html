@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="enter your name" oninput="validateName(this)"><br><br>
+            <span id="error-message" style="color: red;"></span>
+            enter your age:  <input type="date" id="date" min="2000-01-01" max="2010-12-31"><br><br>
+            enter your location: <input type="text" id="text"><br><br>
+            <label for="subjects">Select a subject:</label>
+             <select id="subjects" name="subjects">
+                 <option value="science">Science</option>
+                 <option value="math">Math</option>
+                 <option value="history">History</option>
+                 <option value="english">English</option> 
+            </select> <br><br> 
+            <input type="submit" value="Submit"> 
+        </div>
+    </div>
+    <script>
+        function validateName(input) {
+            const nameRegex = /^[a-zA-Z]+$/;
+            if (!nameRegex.test(input.value)) {
+                document.getElementById("error-message").textContent = "Please enter only alphabets.";
+            } else {
+                document.getElementById("error-message").textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>
